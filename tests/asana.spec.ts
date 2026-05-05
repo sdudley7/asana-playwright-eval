@@ -1,43 +1,5 @@
 import { test, expect, Page } from '@playwright/test';
-
-const testCases = [
-  {
-    project: 'Web Application',
-    task: 'Implement user authentication',
-    column: 'To Do',
-    tags: ['Feature', 'High Priority'],
-  },
-  {
-    project: 'Web Application',
-    task: 'Fix navigation bug',
-    column: 'To Do',
-    tags: ['Bug'],
-  },
-  {
-    project: 'Web Application',
-    task: 'Design system updates',
-    column: 'In Progress',
-    tags: ['Design'],
-  },
-  {
-    project: 'Mobile Application',
-    task: 'Push notification system',
-    column: 'To Do',
-    tags: ['Feature'],
-  },
-  {
-    project: 'Mobile Application',
-    task: 'Offline mode',
-    column: 'In Progress',
-    tags: ['Feature', 'High Priority'],
-  },
-  {
-    project: 'Mobile Application',
-    task: 'App icon design',
-    column: 'Done',
-    tags: ['Design'],
-  },
-];
+import { testCases } from '../testData/tasks';
 
 async function login(page: Page) {
   await page.goto('https://animated-gingersnap-8cf7f2.netlify.app/');
@@ -56,7 +18,7 @@ async function navigateToProject(page: Page, projectName: string) {
       : /Mobile Application/i;
 
   await page.getByRole('button', { name: projectButtonName }).click();
-  await page.waitForTimeout(500);
+  await page.waitForTimeout(3500);
 }
 
 test.describe('Asana-style task board', () => {
