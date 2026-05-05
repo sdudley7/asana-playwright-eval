@@ -1,1 +1,1 @@
-Test cases are separated from test logic (testData/tasks.ts) to improve scalability and maintainability.
+End-to-end test automation project using Playwright to validate core user flows in an Asana-style application. Test cases are separated from test logic (testData/tasks.ts) to improve scalability and maintainability.
